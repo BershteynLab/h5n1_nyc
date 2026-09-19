@@ -1,30 +1,16 @@
 group,parameter,mild,moderate_2009_like,severe,in_presented_results,slider,notes
 Transmission & natural history,R₀,"1.25 [1.2, 1.4]","1.5 [1.3, 1.9]","3 [2.3, 3.7]",Yes,Yes,Shiny slider 0.1–6. Maps use the midpoint.
-Transmission & natural history,Hospital / nosocomial R₀,0,0,0,Literature only,No,No in-hospital transmission term.
 Transmission & natural history,Incubation period (days),"2 [1.8, 3]","2 [1, 5]","5.3 [4.5, 6]",Yes,No,E → infectious.
-Transmission & natural history,Latent period (days),"1.9 [1.55, 2.2]","1.8 [1.4, 4.3]","1.7 [1.5, 2.2]",Literature only,No,"Progression uses incubation, not this field."
 Transmission & natural history,Infectious period (days),"4 [8, 10]","6 [8, 10]","6 [7, 12]",Yes,No,Sets recovery and death rates.
-Transmission & natural history,"Shedding (log10 copies/ml, −48 h)","2.8 [2.7, 4.2]","2.9 [2.7, 3.1]","5.5 [4.5, 6.5]",Literature only,No,Not used in force of infection.
 Transmission & natural history,P(symptomatic | infection),"25% [20%, 33%]","50% [35%, 67%]","70% [50%, 85%]",Yes,No,Splits E → I vs A.
-Transmission & natural history,Household secondary attack rate,"10% [7%, 15%]","10% [4.6%, 20%]","20% [5%, 35%]",Literature only,No,No household layer.
-Transmission & natural history,Natural immunity,"10% [5%, 20%]","10% [5%, 20%]","10% [5%, 20%]",Literature only,No,Initial recovered is 0.
-Transmission & natural history,Lockdown / contact reduction,Not in model,Not in model,Not in model,Not in model,Planned,R₀ is constant within a scenario. Illustrative slider only if added.
 Severity & hospital demand,Hospitalization | case,"1.4% [3%, 6%]","10% [8%, 14%]","50% [35%, 65%]",Yes,No,Ward admits from symptomatic-onset incidence.
 Severity & hospital demand,ICU | hospitalization,"16.8% [3%, 6%]","20% [15%, 25%]","30% [20%, 40%]",Yes,No,ICU admits among ward admissions.
-Severity & hospital demand,ICU | case (direct),"0.23% [0.8%, 1.7%]","3.4% [2%, 5%]","10% [5%, 15%]",Literature only,No,ICU is computed as ICU | hospitalization × ward admits.
-Severity & hospital demand,Ambulatory visits | case,"45.1% [31%, 49%]","25% [22%, 28%]","70% [50%, 85%]",Literature only,No,Not in spillover KPIs.
 Severity & hospital demand,CFR among symptomatic,"0.1% [0.05%, 0.2%]","0.1% [0.05%, 0.5%]","3% [1%, 6%]",Yes,Yes,Shiny slider 0–10%. Maps use the midpoint.
 Severity & hospital demand,LOS ward (days),"6 [4, 9]","7.5 [5, 10]","9.5 [7, 14]",Yes,Planned,Already used as a fixed scenario value.
 Severity & hospital demand,LOS ICU (days),"7 [4, 14]","8.5 [5, 14]","11 [7, 18]",Yes,Planned,Already used as a fixed scenario value.
 Vaccination & medical countermeasures,Vaccine protection vs symptomatic infection,"45% [70%, 85%]","80% [70%, 85%]","80% [70%, 85%]","In code, off",Planned,Applies only to people in V. Coverage is currently 0.
 Vaccination & medical countermeasures,Initial vaccinated coverage (v₀),0%,0%,0%,"In code, off",Planned,Set to 0 in presented runs.
 Vaccination & medical countermeasures,Vaccination rate during outbreak (ν),0,0,0,"In code, off",Planned,Set to 0 in presented runs (no campaign).
-Vaccination & medical countermeasures,Vaccine protection vs hospitalization,"40% [60%, 80%]","72% [60%, 80%]","72% [60%, 80%]",Literature only,No,Does not reduce ward demand.
-Vaccination & medical countermeasures,Vaccine protection vs ICU,"43% [50%, 75%]","65% [50%, 75%]","65% [50%, 75%]",Literature only,No,Does not reduce ICU demand.
-Vaccination & medical countermeasures,Vaccine protection vs death,"31% [65%, 85%]","75% [65%, 85%]","75% [65%, 85%]",Literature only,No,CFR is not vaccine-specific.
-Vaccination & medical countermeasures,Vaccine duration of effectiveness (days),"180 [120, 365]","180 [120, 365]","180 [120, 365]",Literature only,No,No waning.
-Vaccination & medical countermeasures,Antiviral efficacy (oseltamivir / Tamiflu),"65% [45%, 72%]","65% [45%, 72%]","65% [45%, 72%]",Literature only,No,Not used in transmission or severity.
-Vaccination & medical countermeasures,Antiviral efficacy (baloxavir),"55% [48%, 92%]","55% [48%, 92%]","55% [48%, 92%]",Literature only,No,Not used in transmission or severity.
 Capacity,NYC population,"8,584,629","8,584,629","8,584,629",Yes,No,Model denominator for counts.
 Capacity,Baseline ward occupancy,79.8%,79.8%,79.8%,Yes,No,Pre-surge occupancy of staffed acute-care beds.
 Capacity,Baseline ICU occupancy,79.4%,79.4%,79.4%,Yes,No,Pre-surge occupancy of staffed ICU beds.
