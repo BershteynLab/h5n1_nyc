@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parameter table — H5N1 NYC model</title>
+<style>
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: #cbd5e1;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --accent: #1d4ed8;
+}
+body {
+  margin: 0;
+  font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 28%, #f1f5f9 100%);
+  line-height: 1.45;
+}
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+.nav { display: inline-block; margin-bottom: 1rem; font-weight: 600; }
+.nav a { color: var(--accent); text-decoration: none; }
+.nav a:hover { text-decoration: underline; }
+h1 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin: 0 0 0.4rem;
+}
+.lede { color: var(--muted); max-width: 52rem; margin: 0 0 1rem; }
+.lede a { color: var(--accent); font-weight: 600; }
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  margin: 0 0 1.1rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  min-width: 920px;
+}
+th, td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+}
+thead th {
+  background: #f1f5f9;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  position: sticky;
+  top: 0;
+}
+tbody th {
+  font-weight: 650;
+  color: #1e293b;
+  background: #fafafa;
+  max-width: 16rem;
+}
+tr.group th {
+  background: #e2e8f0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #334155;
+  padding-top: 0.7rem;
+}
+td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+td.note-cell { color: var(--muted); font-size: 0.8rem; max-width: 18rem; }
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 650;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.badge.yes { background: #dcfce7; color: #166534; }
+.badge.off { background: #fef3c7; color: #92400e; }
+.badge.lit { background: #e2e8f0; color: #334155; }
+.badge.none { background: #f1f5f9; color: #64748b; }
+.badge.planned { background: #dbeafe; color: #1e40af; }
+.foot { color: var(--muted); font-size: 0.88rem; margin-top: 0.75rem; }
+.foot a { color: var(--accent); }
+</style>
+    <link rel="icon" type="image/png" href="icons8-duck-50.png" sizes="50x50">
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><a href="index.html">← Back to risk map hub</a></div>
+  <h1>Parameter table</h1>
+  <p class="lede">
+    Exhaustive inventory of the NYC H5N1 model. Maps and the
+    <a href="scenario_comparison_table.html">scenario comparison</a> use the
+    scenario midpoint. Registry range is the literature low–high in
+    <code>parameters.csv</code>, not a statistical confidence interval.
+    Shiny sliders explore around the midpoint and do not change the static
+    HTML results until the maps are re-run.
+    Open the <a href="https://nyinny.shinyapps.io/h5n1_nyc_incidence_hospital_demand/" target="_blank" rel="noopener noreferrer">Shiny app</a>
+    to vary slider parameters.
+  </p>
+  <div class="legend">
+    <span class="badge yes">Yes</span> in presented results
+    <span class="badge off">In code, off</span> in equations, currently zero
+    <span class="badge lit">Literature only</span> stored, not used
+    <span class="badge none">Not in model</span> absent
+    <span class="badge yes">Slider: Yes</span> / <span class="badge planned">Planned</span> / <span class="badge none">No</span>
+  </div>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Mild (seasonal flu)</th><th>Moderate (2009-like)</th><th>Severe (COVID-like)</th>
+          <th>In presented results</th>
+          <th>Slider</th>
+          <th>Registry range</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class='group'><th colspan='8'>Transmission &amp; natural history</th></tr><tr><th scope='row'>R₀</th><td class='num'>1.25</td><td class='num'>1.5</td><td class='num'>3</td><td><span class="badge yes">Yes</span></td><td><span class="badge yes">Yes</span></td><td class='num'>Mild (seasonal flu): 1.2–1.4 / Moderate (2009-like): 1.3–1.9 / Severe (COVID-like): 2.3–3.7</td><td class='note-cell'>Shiny slider 0.1–6. Maps use the midpoint.</td></tr><tr><th scope='row'>Hospital / nosocomial R₀</th><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>0–0</td><td class='note-cell'>No in-hospital transmission term.</td></tr><tr><th scope='row'>Incubation period (days)</th><td class='num'>2</td><td class='num'>2</td><td class='num'>5.3</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 1.8–3 / Moderate (2009-like): 1–5 / Severe (COVID-like): 4.5–6</td><td class='note-cell'>E → infectious.</td></tr><tr><th scope='row'>Latent period (days)</th><td class='num'>1.9</td><td class='num'>1.8</td><td class='num'>1.7</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 1.55–2.2 / Moderate (2009-like): 1.4–4.3 / Severe (COVID-like): 1.5–2.2</td><td class='note-cell'>Progression uses incubation, not this field.</td></tr><tr><th scope='row'>Infectious period (days)</th><td class='num'>4</td><td class='num'>6</td><td class='num'>6</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 8–10 / Moderate (2009-like): 8–10 / Severe (COVID-like): 7–12</td><td class='note-cell'>Sets recovery and death rates.</td></tr><tr><th scope='row'>Shedding (log10 copies/ml, −48 h)</th><td class='num'>2.8</td><td class='num'>2.9</td><td class='num'>5.5</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 2.7–4.2 / Moderate (2009-like): 2.7–3.1 / Severe (COVID-like): 4.5–6.5</td><td class='note-cell'>Not used in force of infection.</td></tr><tr><th scope='row'>P(symptomatic | infection)</th><td class='num'>25%</td><td class='num'>50%</td><td class='num'>70%</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 20%–33% / Moderate (2009-like): 35%–67% / Severe (COVID-like): 50%–85%</td><td class='note-cell'>Splits E → I vs A.</td></tr><tr><th scope='row'>Household secondary attack rate</th><td class='num'>10%</td><td class='num'>10%</td><td class='num'>20%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 7%–15% / Moderate (2009-like): 4.6%–20% / Severe (COVID-like): 5%–35%</td><td class='note-cell'>No household layer.</td></tr><tr><th scope='row'>Natural immunity</th><td class='num'>10%</td><td class='num'>10%</td><td class='num'>10%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>5%–20%</td><td class='note-cell'>Initial recovered is 0.</td></tr><tr><th scope='row'>Lockdown / contact reduction</th><td class='num'>Not in model</td><td class='num'>Not in model</td><td class='num'>Not in model</td><td><span class="badge none">Not in model</span></td><td><span class="badge planned">Planned</span></td><td class='num'>—</td><td class='note-cell'>R₀ is constant within a scenario. Illustrative slider only if added.</td></tr><tr class='group'><th colspan='8'>Severity &amp; hospital demand</th></tr><tr><th scope='row'>Hospitalization | case</th><td class='num'>1.4%</td><td class='num'>10%</td><td class='num'>50%</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 3%–6% / Moderate (2009-like): 8%–14% / Severe (COVID-like): 35%–65%</td><td class='note-cell'>Ward admits from symptomatic-onset incidence.</td></tr><tr><th scope='row'>ICU | hospitalization</th><td class='num'>16.8%</td><td class='num'>20%</td><td class='num'>30%</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 3%–6% / Moderate (2009-like): 15%–25% / Severe (COVID-like): 20%–40%</td><td class='note-cell'>ICU admits among ward admissions.</td></tr><tr><th scope='row'>ICU | case (direct)</th><td class='num'>0.23%</td><td class='num'>3.4%</td><td class='num'>10%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 0.8%–1.7% / Moderate (2009-like): 2%–5% / Severe (COVID-like): 5%–15%</td><td class='note-cell'>ICU is computed as ICU | hospitalization × ward admits.</td></tr><tr><th scope='row'>Ambulatory visits | case</th><td class='num'>45.1%</td><td class='num'>25%</td><td class='num'>70%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>Mild (seasonal flu): 31%–49% / Moderate (2009-like): 22%–28% / Severe (COVID-like): 50%–85%</td><td class='note-cell'>Not in spillover KPIs.</td></tr><tr><th scope='row'>CFR among symptomatic</th><td class='num'>0.1%</td><td class='num'>0.1%</td><td class='num'>3%</td><td><span class="badge yes">Yes</span></td><td><span class="badge yes">Yes</span></td><td class='num'>Mild (seasonal flu): 0.05%–0.2% / Moderate (2009-like): 0.05%–0.5% / Severe (COVID-like): 1%–6%</td><td class='note-cell'>Shiny slider 0–10%. Maps use the midpoint.</td></tr><tr><th scope='row'>LOS ward (days)</th><td class='num'>6</td><td class='num'>7.5</td><td class='num'>9.5</td><td><span class="badge yes">Yes</span></td><td><span class="badge planned">Planned</span></td><td class='num'>Mild (seasonal flu): 4–9 / Moderate (2009-like): 5–10 / Severe (COVID-like): 7–14</td><td class='note-cell'>Already used as a fixed scenario value.</td></tr><tr><th scope='row'>LOS ICU (days)</th><td class='num'>7</td><td class='num'>8.5</td><td class='num'>11</td><td><span class="badge yes">Yes</span></td><td><span class="badge planned">Planned</span></td><td class='num'>Mild (seasonal flu): 4–14 / Moderate (2009-like): 5–14 / Severe (COVID-like): 7–18</td><td class='note-cell'>Already used as a fixed scenario value.</td></tr><tr class='group'><th colspan='8'>Vaccination &amp; medical countermeasures</th></tr><tr><th scope='row'>Vaccine protection vs symptomatic infection</th><td class='num'>45%</td><td class='num'>80%</td><td class='num'>80%</td><td><span class="badge off">In code, off</span></td><td><span class="badge planned">Planned</span></td><td class='num'>70%–85%</td><td class='note-cell'>Applies only to people in V. Coverage is currently 0.</td></tr><tr><th scope='row'>Initial vaccinated coverage (v₀)</th><td class='num'>0%</td><td class='num'>0%</td><td class='num'>0%</td><td><span class="badge off">In code, off</span></td><td><span class="badge planned">Planned</span></td><td class='num'>—</td><td class='note-cell'>Set to 0 in presented runs.</td></tr><tr><th scope='row'>Vaccination rate during outbreak (ν)</th><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td><td><span class="badge off">In code, off</span></td><td><span class="badge planned">Planned</span></td><td class='num'>—</td><td class='note-cell'>Set to 0 in presented runs (no campaign).</td></tr><tr><th scope='row'>Vaccine protection vs hospitalization</th><td class='num'>40%</td><td class='num'>72%</td><td class='num'>72%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>60%–80%</td><td class='note-cell'>Does not reduce ward demand.</td></tr><tr><th scope='row'>Vaccine protection vs ICU</th><td class='num'>43%</td><td class='num'>65%</td><td class='num'>65%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>50%–75%</td><td class='note-cell'>Does not reduce ICU demand.</td></tr><tr><th scope='row'>Vaccine protection vs death</th><td class='num'>31%</td><td class='num'>75%</td><td class='num'>75%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>65%–85%</td><td class='note-cell'>CFR is not vaccine-specific.</td></tr><tr><th scope='row'>Vaccine duration of effectiveness (days)</th><td class='num'>180</td><td class='num'>180</td><td class='num'>180</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>120–365</td><td class='note-cell'>No waning.</td></tr><tr><th scope='row'>Antiviral efficacy (oseltamivir / Tamiflu)</th><td class='num'>65%</td><td class='num'>65%</td><td class='num'>65%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>45%–72%</td><td class='note-cell'>Not used in transmission or severity.</td></tr><tr><th scope='row'>Antiviral efficacy (baloxavir)</th><td class='num'>55%</td><td class='num'>55%</td><td class='num'>55%</td><td><span class="badge lit">Literature only</span></td><td><span class="badge none">No</span></td><td class='num'>48%–92%</td><td class='note-cell'>Not used in transmission or severity.</td></tr><tr class='group'><th colspan='8'>Capacity</th></tr><tr><th scope='row'>NYC population</th><td class='num'>8,584,629</td><td class='num'>8,584,629</td><td class='num'>8,584,629</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>—</td><td class='note-cell'>Model denominator for counts.</td></tr><tr><th scope='row'>Baseline ward occupancy</th><td class='num'>79.8%</td><td class='num'>79.8%</td><td class='num'>79.8%</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>—</td><td class='note-cell'>Pre-surge occupancy of staffed acute-care beds.</td></tr><tr><th scope='row'>Baseline ICU occupancy</th><td class='num'>79.4%</td><td class='num'>79.4%</td><td class='num'>79.4%</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>—</td><td class='note-cell'>Pre-surge occupancy of staffed ICU beds.</td></tr><tr><th scope='row'>City free ward beds</th><td class='num'>3226.5</td><td class='num'>3226.5</td><td class='num'>3226.5</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>—</td><td class='note-cell'>Staffed acute beds × (1 − ward occupancy).</td></tr><tr><th scope='row'>City free ICU beds</th><td class='num'>346.3</td><td class='num'>346.3</td><td class='num'>346.3</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>—</td><td class='note-cell'>Staffed ICU beds × (1 − ICU occupancy).</td></tr><tr class='group'><th colspan='8'>Geography</th></tr><tr><th scope='row'>ZIP burden weights</th><td class='num'>0.25 / 0.20 / 0.30 / 0.25</td><td class='num'>0.25 / 0.20 / 0.30 / 0.25</td><td class='num'>0.25 / 0.20 / 0.30 / 0.25</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>—</td><td class='note-cell'>Density 0.25, LODES 0.20, SVI 0.30, inverted access 0.25. Poultry/water excluded.</td></tr><tr><th scope='row'>Hospital assignment</th><td class='num'>Nearest + overflow</td><td class='num'>Nearest + overflow</td><td class='num'>Nearest + overflow</td><td><span class="badge yes">Yes</span></td><td><span class="badge none">No</span></td><td class='num'>—</td><td class='note-cell'>Nearest campus; overflow to next-nearest when free beds are exhausted.</td></tr><tr class='group'><th colspan='8'>Shiny app only</th></tr><tr><th scope='row'>Reporting given modeled onset</th><td class='num'>100%</td><td class='num'>100%</td><td class='num'>100%</td><td><span class="badge yes">Yes</span></td><td><span class="badge yes">Yes</span></td><td class='num'>0–100%</td><td class='note-cell'>Maps use 100%. Slider 0–100%.</td></tr><tr><th scope='row'>Extra reporting scale</th><td class='num'>100%</td><td class='num'>100%</td><td class='num'>100%</td><td><span class="badge yes">Yes</span></td><td><span class="badge yes">Yes</span></td><td class='num'>0–100%</td><td class='note-cell'>Maps use 100%. Optional second reporting slider.</td></tr>
+      </tbody>
+    </table>
+    <p class="foot">
+      Download <a href="parameters_inventory.csv">parameters_inventory.csv</a>.
+      Illustrative analyses — not clinical guidance.
+    </p>
+  </section>
+</div>
+</body>
+</html>
