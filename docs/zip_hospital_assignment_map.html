@@ -51,8 +51,34 @@
 
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<style id="back-to-hub-nav">
+.incidence-map-nav, .risk-map-nav {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10002;
+    background: #ffffffee;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+}
+.incidence-map-nav a, .risk-map-nav a {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+.incidence-map-nav a:hover, .risk-map-nav a:hover {
+    text-decoration: underline;
+}
+</style>
 </head>
 <body>
+<div class="risk-map-nav"><a href="index.html">← Back to risk map hub</a></div>
+
     
     <div style="position:fixed;top:12px;left:52px;z-index:9999;background:#ffffffee;padding:10px 12px;border:1px solid #ccc;border-radius:8px;max-width:340px;font-size:13px"><b>ZIP → nearest hospital (v1)</b><br>Choropleth = km from ZIP centroid to assigned hospital. Green pins = DOH acute-care list; Bellevue blue. Illustrative assignment — not real catchments.</div>
     
@@ -81,13 +107,13 @@
         
     
             var tile_layer_6d2499ebd52ee551ab8ec76fecdd0df0 = L.tileLayer(
-                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
-  "maxZoom": 20,
-  "maxNativeZoom": 20,
+  "maxZoom": 18,
+  "maxNativeZoom": 16,
   "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "attribution": "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ",
   "subdomains": "abcd",
   "detectRetina": false,
   "tms": false,
