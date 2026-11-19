@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parameter changes — H5N1 NYC model</title>
+<style>
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: #cbd5e1;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --accent: #1d4ed8;
+}
+body {
+  margin: 0;
+  font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 28%, #f1f5f9 100%);
+  line-height: 1.45;
+}
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+.nav { display: inline-block; margin-bottom: 1rem; font-weight: 600; }
+.nav a { color: var(--accent); text-decoration: none; margin-right: 1.1rem; }
+.nav a:hover { text-decoration: underline; }
+h1 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin: 0 0 0.4rem;
+}
+h2 { font-size: 1.15rem; margin: 0 0 0.35rem; }
+.lede, .section-lede { color: var(--muted); max-width: 52rem; }
+.lede a, .section-lede a { color: var(--accent); font-weight: 600; }
+.counts { display: flex; gap: 0.75rem; margin: 1rem 0 1.25rem; flex-wrap: wrap; }
+.count {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  min-width: 8rem;
+}
+.count b { display: block; font-size: 1.4rem; }
+.count span { color: var(--muted); font-size: 0.85rem; }
+section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+  overflow-x: auto;
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 720px; }
+th, td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.55rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+thead th { background: #f1f5f9; font-size: 0.78rem; }
+tbody th { font-weight: 650; background: #fafafa; max-width: 18rem; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.changed { background: #fff7ed; }
+.was { display: block; color: var(--muted); text-decoration: line-through; font-size: 0.82rem; }
+.now { display: block; font-weight: 700; }
+.foot { color: var(--muted); font-size: 0.88rem; }
+</style>
+    <link rel="icon" type="image/png" href="icons8-duck-50.png" sizes="50x50">
+</head>
+<body>
+<div class="wrap">
+  <div class="nav">
+    <a href="index.html">← Hub</a>
+    <a href="parameters.html">Current table</a>
+    <a href="parameters_previous.html">Previous table</a>
+  </div>
+  <h1>What changed in the parameter table</h1>
+  <p class="lede">
+    The previous column is the table that was on the hub.
+    The current column is rebuilt from <code>parameters.csv</code> and <code>surge_params.csv</code>.
+    Rows that are the same in all three scenarios are left off this page.
+    In a changed cell, the crossed-out line is the previous value and the bold line is the current value.
+    A plain cell did not change for that scenario.
+  </p>
+  <div class="counts">
+    <div class="count"><b>3</b><span>values changed</span></div>
+    <div class="count"><b>13</b><span>added</span></div>
+    <div class="count"><b>3</b><span>only on the previous page</span></div>
+  </div>
+  
+  <section>
+    <h2>Values that changed</h2>
+    <p class="section-lede">Same parameter name on both pages, with a different midpoint or range.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Mild</th><th>Moderate</th><th>Severe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope='row'>In-hospital death | ward-only</th><td class='num changed'><span class='was'>0% [0%, 20%]</span><span class='now'>4% [0%, 20%]</span></td><td class='num changed'><span class='was'>0% [0%, 20%]</span><span class='now'>3% [0%, 20%]</span></td><td class='num changed'><span class='was'>0% [0%, 30%]</span><span class='now'>12% [0%, 30%]</span></td></tr><tr><th scope='row'>In-hospital death | ICU</th><td class='num changed'><span class='was'>0% [0%, 40%]</span><span class='now'>28% [0%, 40%]</span></td><td class='num changed'><span class='was'>0% [0%, 40%]</span><span class='now'>21% [0%, 40%]</span></td><td class='num changed'><span class='was'>0% [0%, 50%]</span><span class='now'>45% [40%, 55%]</span></td></tr><tr><th scope='row'>City free ward beds</th><td class='num changed'><span class='was'>3226.5</span><span class='now'>2,887</span></td><td class='num changed'><span class='was'>3226.5</span><span class='now'>2,887</span></td><td class='num changed'><span class='was'>3226.5</span><span class='now'>2,887</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <section>
+    <h2>Added on the current table</h2>
+    <p class="section-lede">These rows are in the current model and were not on the previous page.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Mild</th><th>Moderate</th><th>Severe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope='row'>Post-ICU ward step-down (days)</th><td class='num'>10 [0, 10]</td><td class='num'>10 [0, 10]</td><td class='num'>10 [0, 10]</td></tr><tr><th scope='row'>Vaccine coverage at introduction (v)</th><td class='num'>59.8%</td><td class='num'>59.8%</td><td class='num'>59.8%</td></tr><tr><th scope='row'>Vaccine effectiveness vs hospitalization</th><td class='num'>41%</td><td class='num'>41%</td><td class='num'>41%</td></tr><tr><th scope='row'>Vaccine effectiveness vs outpatient visits</th><td class='num'>36%</td><td class='num'>36%</td><td class='num'>36%</td></tr><tr><th scope='row'>Vaccine effectiveness vs death</th><td class='num'>41%</td><td class='num'>41%</td><td class='num'>41%</td></tr><tr><th scope='row'>Share of symptomatic treated early as outpatients (c_out)</th><td class='num'>15.75%</td><td class='num'>15.75%</td><td class='num'>15.75%</td></tr><tr><th scope='row'>Share of hospitalized patients treated (c_in)</th><td class='num'>100%</td><td class='num'>100%</td><td class='num'>100%</td></tr><tr><th scope='row'>Oseltamivir: reduction in admission</th><td class='num'>21%</td><td class='num'>21%</td><td class='num'>21%</td></tr><tr><th scope='row'>Oseltamivir: reduction in death</th><td class='num'>19% [0%, 49%]</td><td class='num'>19% [0%, 49%]</td><td class='num'>19% [0%, 49%]</td></tr><tr><th scope='row'>Baloxavir: reduction in admission</th><td class='num'>21%</td><td class='num'>21%</td><td class='num'>21%</td></tr><tr><th scope='row'>Baloxavir: reduction in death</th><td class='num'>19% [0%, 49%]</td><td class='num'>19% [0%, 49%]</td><td class='num'>19% [0%, 49%]</td></tr><tr><th scope='row'>Oseltamivir + baloxavir: reduction in admission</th><td class='num'>21%</td><td class='num'>21%</td><td class='num'>21%</td></tr><tr><th scope='row'>Oseltamivir + baloxavir: reduction in death</th><td class='num'>19% [0%, 63%]</td><td class='num'>19% [0%, 63%]</td><td class='num'>19% [0%, 63%]</td></tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <section>
+    <h2>Only on the previous page</h2>
+    <p class="section-lede">These rows were on the hub table and are not in the current inventory.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Mild</th><th>Moderate</th><th>Severe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope='row'>Vaccine protection vs symptomatic infection</th><td class='num'>45% [70%, 85%]</td><td class='num'>80% [70%, 85%]</td><td class='num'>80% [70%, 85%]</td></tr><tr><th scope='row'>Initial vaccinated coverage (v₀)</th><td class='num'>0%</td><td class='num'>0%</td><td class='num'>0%</td></tr><tr><th scope='row'>Vaccination rate during outbreak (ν)</th><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <p class="foot">Illustrative analyses — not clinical guidance.</p>
+</div>
+</body>
+</html>
