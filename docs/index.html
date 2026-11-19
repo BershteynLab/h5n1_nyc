@@ -151,6 +151,17 @@
             font-weight: 600;
         }
 
+        .info-panel ul {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin: 0.15rem 0 0.85rem;
+            padding-left: 1.4rem;
+        }
+
+        .info-panel li {
+            margin: 0.35rem 0;
+        }
+
         .info-panel code {
             font-family: ui-monospace, "Cascadia Code", monospace;
             font-size: 0.8em;
@@ -393,7 +404,13 @@
                 <p><strong>Components:</strong> Each link opens a separate map for one risk factor in the composite H5N1 score.</p>
                 <p><strong>Early outbreak:</strong> Where spillover and introduction are more likely (avian exposure, waterfowl habitat).</p>
                 <p><strong>Long-term burden:</strong> Where sustained transmission and severe outcomes may concentrate.</p>
-                <p><strong>Modeled ZIP incidence:</strong> New symptomatic cases from the SEAIR–D compartment model, split across ZIPs by population times a healthcare burden score (density, commuting, social vulnerability, and access to care). The maps are illustrative. They are not a fitted spatial model. Three scenarios, in order: <strong>Mild (seasonal flu)</strong>, <strong>Moderate (2009-like)</strong>, and <strong>Severe (COVID-like)</strong>. Each opens the peak day with 46 hospital circles. Uncheck Hospitals to see the ZIP colors alone.</p>
+                <p><strong>Modeled ZIP incidence</strong></p>
+                <ul>
+                    <li>New symptomatic cases from the SEAIR–D compartment model, split across ZIPs by population times a healthcare burden score (density, commuting, social vulnerability, and access to care).</li>
+                    <li>The maps are illustrative. They are not a fitted spatial model.</li>
+                    <li>Three scenarios, in order: <strong>Mild (seasonal flu)</strong>, <strong>Moderate (2009-like)</strong>, and <strong>Severe (COVID-like)</strong>.</li>
+                    <li>Each opens the peak day with 46 hospital circles. Uncheck Hospitals to see the ZIP colors alone.</li>
+                </ul>
                 <p><strong>Hospital catchments &amp; comparison:</strong> Separate from incidence. Each ZIP is assigned to its nearest hospital, and a table compares hospital systems and high-case, low-bed ZIPs across scenarios.</p>
                 <p><strong>Parameter table:</strong> Parameters that exist in the model, with slider status and literature ranges (not statistical CIs). Unused literature fields are not listed.</p>
             </div>
