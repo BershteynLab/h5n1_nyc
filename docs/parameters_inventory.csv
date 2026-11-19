@@ -1,36 +1,36 @@
-group,parameter,mild,moderate_2009_like,severe,in_presented_results,slider,notes
-Transmission & natural history,R₀,"1.25 [1.2, 1.4]","1.5 [1.3, 1.9]","3 [2.3, 3.7]",Yes,Yes,Next-generation R₀ of the full model (A and I transmit). Shiny slider 0.1–6. Maps use the midpoint.
-Transmission & natural history,Incubation period (days),"2 [1.8, 3]","2 [1, 5]","5.3 [4.5, 6]",Yes,No,E → infectious.
-Transmission & natural history,Infectious period (days),"4 [8, 10]","6 [8, 10]","6 [7, 12]",Yes,No,Sets recovery and death rates.
-Transmission & natural history,P(symptomatic | infection),"25% [20%, 33%]","50% [35%, 67%]","70% [50%, 85%]",Yes,No,Splits E → I vs A.
-Severity & hospital demand,Hospitalization | case,"1.4% [3%, 6%]","10% [8%, 14%]","50% [35%, 65%]",Yes,No,Ward admits from symptomatic-onset incidence.
-Severity & hospital demand,ICU | hospitalization,"16.8% [3%, 6%]","20% [15%, 25%]","30% [20%, 40%]",Yes,No,ICU admits among ward admissions.
-Severity & hospital demand,CFR among symptomatic,"0.1% [0.05%, 0.2%]","0.1% [0.05%, 0.5%]","3% [1%, 6%]",Yes,Yes,Shiny slider 0–10%. Maps use the midpoint.
-Severity & hospital demand,LOS ward if discharged (days),"6 [4, 9]","7.5 [5, 10]","9.5 [7, 14]",Yes,Yes,Shiny slider 4–14 days. Maps use the midpoint. Ward-only patients only; ICU patients use ICU beds.
-Severity & hospital demand,LOS ward if died in hospital (days),"6 [1, 9]","7.5 [1, 10]","9.5 [1, 14]",Yes,No,Placeholder equals discharge LOS until literature or expert values are filled.
-Severity & hospital demand,LOS ICU if discharged (days),"7 [4, 14]","8.5 [5, 14]","11 [7, 18]",Yes,Yes,Shiny slider 4–18 days. Maps use the midpoint.
-Severity & hospital demand,LOS ICU if died in hospital (days),"7 [1, 14]","8.5 [1, 14]","11 [1, 18]",Yes,No,Placeholder equals discharge LOS until literature or expert values are filled.
-Severity & hospital demand,In-hospital death | ward-only,"4% [0%, 20%]","3% [0%, 20%]","12% [0%, 30%]",Yes,No,Among ward-only admissions. Not the community CFR.
-Severity & hospital demand,In-hospital death | ICU,"28% [0%, 40%]","21% [0%, 40%]","45% [40%, 55%]",Yes,No,Among ICU admissions.
-Severity & hospital demand,Post-ICU ward step-down (days),"10 [0, 10]","10 [0, 10]","10 [0, 10]",Yes,No,Ward days for ICU survivors after the ICU stay. Placeholder pending team confirmation.
-Vaccination & medical countermeasures,Vaccine coverage at introduction (v),59.8%,59.8%,59.8%,Yes,No,Used only in the vaccine sets. Base case is 0.
-Vaccination & medical countermeasures,Vaccine effectiveness vs hospitalization,41%,41%,41%,Yes,No,Admissions x (1 - v VE).
-Vaccination & medical countermeasures,Vaccine effectiveness vs outpatient visits,36%,36%,36%,Yes,No,Outpatient visits x (1 - v VE).
-Vaccination & medical countermeasures,Vaccine effectiveness vs death,41%,41%,41%,Yes,No,Scales delta_I; gamma_I rises so gamma_I + delta_I = 1/T.
-Vaccination & medical countermeasures,Share of symptomatic treated early as outpatients (c_out),15.75%,15.75%,15.75%,Yes,No,45% visit x 35% within 48 h. Placeholder pending team confirmation.
-Vaccination & medical countermeasures,Share of hospitalized patients treated (c_in),100%,100%,100%,Yes,No,Used for the death reduction.
-Vaccination & medical countermeasures,Oseltamivir: reduction in admission,21%,21%,21%,Yes,No,Among treated outpatients.
-Vaccination & medical countermeasures,Oseltamivir: reduction in death,"19% [0%, 49%]","19% [0%, 49%]","19% [0%, 49%]",Yes,No,Among treated. Range is the sensitivity analysis.
-Vaccination & medical countermeasures,Baloxavir: reduction in admission,21%,21%,21%,Yes,No,Set equal to oseltamivir.
-Vaccination & medical countermeasures,Baloxavir: reduction in death,"19% [0%, 49%]","19% [0%, 49%]","19% [0%, 49%]",Yes,No,Set equal to oseltamivir.
-Vaccination & medical countermeasures,Oseltamivir + baloxavir: reduction in admission,21%,21%,21%,Yes,No,One combined treatment.
-Vaccination & medical countermeasures,Oseltamivir + baloxavir: reduction in death,"19% [0%, 63%]","19% [0%, 63%]","19% [0%, 63%]",Yes,No,Upper bound is the combination sensitivity.
-Capacity,NYC population,"8,584,629","8,584,629","8,584,629",Yes,No,Model denominator for counts.
-Capacity,Baseline ward occupancy,79.8%,79.8%,79.8%,Yes,No,Pre-surge occupancy of staffed acute-care beds.
-Capacity,Baseline ICU occupancy,79.4%,79.4%,79.4%,Yes,No,Pre-surge occupancy of staffed ICU beds.
-Capacity,City free ward beds,"2,887","2,887","2,887",Yes,No,(Staffed acute-care − staffed ICU beds) × (1 − ward occupancy).
-Capacity,City free ICU beds,346.3,346.3,346.3,Yes,No,Staffed ICU beds × (1 − ICU occupancy).
-Geography,ZIP burden weights,0.25 / 0.20 / 0.30 / 0.25,0.25 / 0.20 / 0.30 / 0.25,0.25 / 0.20 / 0.30 / 0.25,Yes,No,"Density 0.25, LODES 0.20, SVI 0.30, inverted access 0.25. Poultry/water excluded."
-Geography,Hospital assignment,Nearest + overflow,Nearest + overflow,Nearest + overflow,Yes,No,Nearest campus; overflow to next-nearest when free beds are exhausted.
-Shiny app only,Reporting given modeled onset,"100% [0%, 100%]","100% [0%, 100%]","100% [0%, 100%]",Yes,Yes,Maps use 100%. Slider 0–100%.
-Shiny app only,Extra reporting scale,"100% [0%, 100%]","100% [0%, 100%]","100% [0%, 100%]",Yes,Yes,Maps use 100%. Optional second reporting slider.
+group,parameter,mild,moderate_2009_like,severe,in_presented_results,slider,references,notes
+Transmission & natural history,R₀,"1.25 [1.2, 1.4]","1.5 [1.3, 1.9]","3 [2.3, 3.7]",Yes,Yes,[1] [2] [3],Next-generation R₀ of the full model (A and I transmit). Shiny slider 0.1–6. Maps use the midpoint.
+Transmission & natural history,Incubation period (days),"2 [1.8, 3]","2 [1, 5]","5.3 [4.5, 6]",Yes,No,[4] [5] [6],E → infectious.
+Transmission & natural history,Infectious period (days),"4 [8, 10]","6 [8, 10]","6 [7, 12]",Yes,No,[7],Sets recovery and death rates.
+Transmission & natural history,P(symptomatic | infection),"25% [20%, 33%]","50% [35%, 67%]","70% [50%, 85%]",Yes,No,,Splits E → I vs A.
+Severity & hospital demand,Hospitalization | case,"1.4% [3%, 6%]","10% [8%, 14%]","50% [35%, 65%]",Yes,No,[8],Ward admits from symptomatic-onset incidence.
+Severity & hospital demand,ICU | hospitalization,"16.8% [3%, 6%]","20% [15%, 25%]","30% [20%, 40%]",Yes,No,[9],ICU admits among ward admissions.
+Severity & hospital demand,CFR among symptomatic,"0.1% [0.05%, 0.2%]","0.1% [0.05%, 0.5%]","3% [1%, 6%]",Yes,Yes,[8] [10],Shiny slider 0–10%. Maps use the midpoint.
+Severity & hospital demand,LOS ward if discharged (days),"6 [4, 9]","7.5 [5, 10]","9.5 [7, 14]",Yes,Yes,,Shiny slider 4–14 days. Maps use the midpoint. Ward-only patients only; ICU patients use ICU beds.
+Severity & hospital demand,LOS ward if died in hospital (days),"6 [1, 9]","7.5 [1, 10]","9.5 [1, 14]",Yes,No,,Placeholder equals discharge LOS until literature or expert values are filled.
+Severity & hospital demand,LOS ICU if discharged (days),"7 [4, 14]","8.5 [5, 14]","11 [7, 18]",Yes,Yes,,Shiny slider 4–18 days. Maps use the midpoint.
+Severity & hospital demand,LOS ICU if died in hospital (days),"7 [1, 14]","8.5 [1, 14]","11 [1, 18]",Yes,No,,Placeholder equals discharge LOS until literature or expert values are filled.
+Severity & hospital demand,In-hospital death | ward-only,"4% [0%, 20%]","3% [0%, 20%]","12% [0%, 30%]",Yes,No,[17] [18],Among ward-only admissions. Not the community CFR.
+Severity & hospital demand,In-hospital death | ICU,"28% [0%, 40%]","21% [0%, 40%]","45% [40%, 55%]",Yes,No,[17] [18],Among ICU admissions.
+Severity & hospital demand,Post-ICU ward step-down (days),"10 [0, 10]","10 [0, 10]","10 [0, 10]",Yes,No,,Ward days for ICU survivors after the ICU stay. Placeholder pending team confirmation.
+Vaccination & medical countermeasures,Vaccine coverage at introduction (v),59.8%,59.8%,59.8%,Yes,No,,Used only in the vaccine sets. Base case is 0.
+Vaccination & medical countermeasures,Vaccine effectiveness vs hospitalization,41%,41%,41%,Yes,No,[11],Admissions x (1 - v VE).
+Vaccination & medical countermeasures,Vaccine effectiveness vs outpatient visits,36%,36%,36%,Yes,No,[11],Outpatient visits x (1 - v VE).
+Vaccination & medical countermeasures,Vaccine effectiveness vs death,41%,41%,41%,Yes,No,[11],Scales delta_I; gamma_I rises so gamma_I + delta_I = 1/T.
+Vaccination & medical countermeasures,Share of symptomatic treated early as outpatients (c_out),15.75%,15.75%,15.75%,Yes,No,[8] [12] [13],45% visit x 35% within 48 h. Placeholder pending team confirmation.
+Vaccination & medical countermeasures,Share of hospitalized patients treated (c_in),100%,100%,100%,Yes,No,,Used for the death reduction.
+Vaccination & medical countermeasures,Oseltamivir: reduction in admission,21%,21%,21%,Yes,No,[14],Among treated outpatients.
+Vaccination & medical countermeasures,Oseltamivir: reduction in death,"19% [0%, 49%]","19% [0%, 49%]","19% [0%, 49%]",Yes,No,[15],Among treated. Range is the sensitivity analysis.
+Vaccination & medical countermeasures,Baloxavir: reduction in admission,21%,21%,21%,Yes,No,[16],Set equal to oseltamivir.
+Vaccination & medical countermeasures,Baloxavir: reduction in death,"19% [0%, 49%]","19% [0%, 49%]","19% [0%, 49%]",Yes,No,[16],Set equal to oseltamivir.
+Vaccination & medical countermeasures,Oseltamivir + baloxavir: reduction in admission,21%,21%,21%,Yes,No,[16],One combined treatment.
+Vaccination & medical countermeasures,Oseltamivir + baloxavir: reduction in death,"19% [0%, 63%]","19% [0%, 63%]","19% [0%, 63%]",Yes,No,[16],Upper bound is the combination sensitivity.
+Capacity,NYC population,"8,584,629","8,584,629","8,584,629",Yes,No,[19],Model denominator for counts.
+Capacity,Baseline ward occupancy,79.8%,79.8%,79.8%,Yes,No,[20],Pre-surge occupancy of staffed acute-care beds.
+Capacity,Baseline ICU occupancy,79.4%,79.4%,79.4%,Yes,No,[20],Pre-surge occupancy of staffed ICU beds.
+Capacity,City free ward beds,"2,887","2,887","2,887",Yes,No,[20],(Staffed acute-care − staffed ICU beds) × (1 − ward occupancy).
+Capacity,City free ICU beds,346.3,346.3,346.3,Yes,No,[20],Staffed ICU beds × (1 − ICU occupancy).
+Geography,ZIP burden weights,0.25 / 0.20 / 0.30 / 0.25,0.25 / 0.20 / 0.30 / 0.25,0.25 / 0.20 / 0.30 / 0.25,Yes,No,,"Density 0.25, LODES 0.20, SVI 0.30, inverted access 0.25. Poultry/water excluded."
+Geography,Hospital assignment,Nearest + overflow,Nearest + overflow,Nearest + overflow,Yes,No,[20],Nearest campus; overflow to next-nearest when free beds are exhausted.
+Shiny app only,Reporting given modeled onset,"100% [0%, 100%]","100% [0%, 100%]","100% [0%, 100%]",Yes,Yes,,Maps use 100%. Slider 0–100%.
+Shiny app only,Extra reporting scale,"100% [0%, 100%]","100% [0%, 100%]","100% [0%, 100%]",Yes,Yes,,Maps use 100%. Optional second reporting slider.
