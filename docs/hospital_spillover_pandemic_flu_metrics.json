@@ -1,0 +1,222 @@
+{
+  "scenario": "pandemic_flu",
+  "incidence_type": "symptomatic",
+  "n_days": 300,
+  "hosp_params": {
+    "ratio_hospitalization_per_case": 0.1,
+    "ratio_icu_given_hospitalization": 0.2,
+    "los_ward_days": 7.5,
+    "los_icu_days": 8.5,
+    "los_ward_death_days": 7.5,
+    "los_icu_death_days": 8.5,
+    "ratio_in_hospital_death_given_ward_only": 0.0,
+    "ratio_in_hospital_death_given_icu": 0.0,
+    "baseline_ward_occupancy": 0.798,
+    "baseline_icu_occupancy": 0.794
+  },
+  "city_free_ward_beds": 3226.546,
+  "city_free_icu_beds": 346.28599999999994,
+  "peak_city_ward_census": 2916.9346437691056,
+  "peak_city_icu_census": 316.49587746994666,
+  "total_ward_spill_patients": 42832.506435328934,
+  "total_icu_spill_patients": 5159.486653407482,
+  "strain": [
+    {
+      "metric": "ward_any_hospital",
+      "first_day_at_capacity": 5,
+      "cum_cases_that_day": 9499.56630451058,
+      "daily_cases_that_day": 1815.9135202043171,
+      "first_stretch_days": 2,
+      "total_days_at_or_over_capacity": 127,
+      "first_hospitals": [
+        "1628:FLUSHING HOSPITAL MEDICAL CENTER (1628)"
+      ]
+    },
+    {
+      "metric": "icu_any_hospital",
+      "first_day_at_capacity": 2,
+      "cum_cases_that_day": 4346.520168574874,
+      "daily_cases_that_day": 1531.7737144973585,
+      "first_stretch_days": 6,
+      "total_days_at_or_over_capacity": 156,
+      "first_hospitals": [
+        "1293:MAIMONIDES MIDWOOD COMMUNITY (1293)",
+        "1639:MOUNT SINAI HOSPITAL OF QUEENS (1639)"
+      ]
+    },
+    {
+      "metric": "ward_citywide_aggregate",
+      "first_day_at_capacity": null,
+      "cum_cases_that_day": null,
+      "daily_cases_that_day": null,
+      "first_stretch_days": 0,
+      "total_days_at_or_over_capacity": 0,
+      "first_hospitals": []
+    },
+    {
+      "metric": "icu_citywide_aggregate",
+      "first_day_at_capacity": null,
+      "cum_cases_that_day": null,
+      "daily_cases_that_day": null,
+      "first_stretch_days": 0,
+      "total_days_at_or_over_capacity": 0,
+      "first_hospitals": []
+    }
+  ],
+  "top3_systems_by_catchment_cases": [
+    {
+      "facility_network": "NYC H+H",
+      "cum_cases": 595240.9933864196,
+      "n_zips": 45,
+      "catchment_pop": 2050618.0
+    },
+    {
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "cum_cases": 281260.66356762825,
+      "n_zips": 25,
+      "catchment_pop": 960482.0
+    },
+    {
+      "facility_network": "MOUNT SINAI HEALTH SYSTEM",
+      "cum_cases": 255288.67503075837,
+      "n_zips": 18,
+      "catchment_pop": 878954.0
+    }
+  ],
+  "top3_systems_by_routed_ward_admissions": [
+    {
+      "facility_network": "NYC H+H",
+      "routed_ward_admissions": 14824.84509093095
+    },
+    {
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "routed_ward_admissions": 10584.78872472753
+    },
+    {
+      "facility_network": "MOUNT SINAI HEALTH SYSTEM",
+      "routed_ward_admissions": 6754.094656509197
+    }
+  ],
+  "vulnerable_zips": [
+    {
+      "zip_code": "11230",
+      "cum_cases": 29442.244033460713,
+      "population": 91391.0,
+      "facility_pfi": 1293,
+      "facility_name": "MAIMONIDES MIDWOOD COMMUNITY (1293)",
+      "facility_network": "MAIMONIDES HEALTH",
+      "free_acute_care_beds": 24.2,
+      "free_icu_beds": 1.2,
+      "system_label": "MAIMONIDES HEALTH",
+      "vulnerability_ratio": 1216.621654275236
+    },
+    {
+      "zip_code": "10456",
+      "cum_cases": 32151.435802452328,
+      "population": 93412.0,
+      "facility_pfi": 1164,
+      "facility_name": "BRONXCARE CENTER FULTON MANDY (1164)",
+      "facility_network": "INDEPENDENT",
+      "free_acute_care_beds": 28.9,
+      "free_icu_beds": 0.0,
+      "system_label": "BRONXCARE CENTER FULTON MANDY (1164)",
+      "vulnerability_ratio": 1112.5064291505996
+    },
+    {
+      "zip_code": "11229",
+      "cum_cases": 23688.773731664074,
+      "population": 83669.0,
+      "facility_pfi": 1293,
+      "facility_name": "MAIMONIDES MIDWOOD COMMUNITY (1293)",
+      "facility_network": "MAIMONIDES HEALTH",
+      "free_acute_care_beds": 24.2,
+      "free_icu_beds": 1.2,
+      "system_label": "MAIMONIDES HEALTH",
+      "vulnerability_ratio": 978.8749475894246
+    },
+    {
+      "zip_code": "10002",
+      "cum_cases": 27857.966834011404,
+      "population": 82155.0,
+      "facility_pfi": 1437,
+      "facility_name": "NYP: LOWER MANHATTAN (1437)",
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "free_acute_care_beds": 29.7,
+      "free_icu_beds": 4.1,
+      "system_label": "NEW YORK - PRESBYTERIAN",
+      "vulnerability_ratio": 937.9786812798453
+    },
+    {
+      "zip_code": "11385",
+      "cum_cases": 31039.53569860989,
+      "population": 100883.0,
+      "facility_pfi": 1318,
+      "facility_name": "WYCKOFF HEIGHTS MC (1318)",
+      "facility_network": "INDEPENDENT",
+      "free_acute_care_beds": 33.9,
+      "free_icu_beds": 3.3,
+      "system_label": "WYCKOFF HEIGHTS MC (1318)",
+      "vulnerability_ratio": 915.6205220828876
+    },
+    {
+      "zip_code": "11355",
+      "cum_cases": 31817.818567622668,
+      "population": 89465.0,
+      "facility_pfi": 1628,
+      "facility_name": "FLUSHING HOSPITAL MEDICAL CENTER (1628)",
+      "facility_network": "MEDISYS HEALTH NETWORK",
+      "free_acute_care_beds": 37.2,
+      "free_icu_beds": 4.1,
+      "system_label": "MEDISYS HEALTH NETWORK",
+      "vulnerability_ratio": 855.3177034307168
+    },
+    {
+      "zip_code": "11226",
+      "cum_cases": 34167.87859260409,
+      "population": 101727.0,
+      "facility_pfi": 1320,
+      "facility_name": "UNIVERSITY: SUNY DOWNSTATE (1320)",
+      "facility_network": "SUNY DOWNSTATE",
+      "free_acute_care_beds": 45.0,
+      "free_icu_beds": 5.4,
+      "system_label": "SUNY DOWNSTATE",
+      "vulnerability_ratio": 759.2861909467575
+    },
+    {
+      "zip_code": "10468",
+      "cum_cases": 26435.805749721516,
+      "population": 78238.0,
+      "facility_pfi": 3975,
+      "facility_name": "NYP: ALLEN HOSPITAL (3975)",
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "free_acute_care_beds": 36.0,
+      "free_icu_beds": 2.1,
+      "system_label": "NEW YORK - PRESBYTERIAN",
+      "vulnerability_ratio": 734.3279374922644
+    },
+    {
+      "zip_code": "11233",
+      "cum_cases": 22625.115649061463,
+      "population": 75399.0,
+      "facility_pfi": 1309,
+      "facility_name": "INTERFAITH MEDICAL CENTER (1309)",
+      "facility_network": "ONE BROOKLYN HEALTH",
+      "free_acute_care_beds": 32.5,
+      "free_icu_beds": 5.1,
+      "system_label": "ONE BROOKLYN HEALTH",
+      "vulnerability_ratio": 696.1574045865066
+    },
+    {
+      "zip_code": "11213",
+      "cum_cases": 20672.043429548587,
+      "population": 67217.0,
+      "facility_pfi": 1309,
+      "facility_name": "INTERFAITH MEDICAL CENTER (1309)",
+      "facility_network": "ONE BROOKLYN HEALTH",
+      "free_acute_care_beds": 32.5,
+      "free_icu_beds": 5.1,
+      "system_label": "ONE BROOKLYN HEALTH",
+      "vulnerability_ratio": 636.0628747553411
+    }
+  ]
+}

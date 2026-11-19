@@ -1,0 +1,217 @@
+{
+  "scenario": "best",
+  "incidence_type": "symptomatic",
+  "n_days": 300,
+  "hosp_params": {
+    "ratio_hospitalization_per_case": 0.01392156863,
+    "ratio_icu_given_hospitalization": 0.168,
+    "los_ward_days": 6.0,
+    "los_icu_days": 7.0,
+    "los_ward_death_days": 6.0,
+    "los_icu_death_days": 7.0,
+    "ratio_in_hospital_death_given_ward_only": 0.0,
+    "ratio_in_hospital_death_given_icu": 0.0,
+    "baseline_ward_occupancy": 0.798,
+    "baseline_icu_occupancy": 0.794
+  },
+  "city_free_ward_beds": 3226.546,
+  "city_free_icu_beds": 346.28599999999994,
+  "peak_city_ward_census": 692.6963291018724,
+  "peak_city_icu_census": 135.72247829963118,
+  "total_ward_spill_patients": 0.0,
+  "total_icu_spill_patients": 172.69987591060294,
+  "strain": [
+    {
+      "metric": "ward_any_hospital",
+      "first_day_at_capacity": null,
+      "cum_cases_that_day": null,
+      "daily_cases_that_day": null,
+      "first_stretch_days": 0,
+      "total_days_at_or_over_capacity": 0,
+      "first_hospitals": []
+    },
+    {
+      "metric": "icu_any_hospital",
+      "first_day_at_capacity": null,
+      "cum_cases_that_day": null,
+      "daily_cases_that_day": null,
+      "first_stretch_days": 0,
+      "total_days_at_or_over_capacity": 0,
+      "first_hospitals": []
+    },
+    {
+      "metric": "ward_citywide_aggregate",
+      "first_day_at_capacity": null,
+      "cum_cases_that_day": null,
+      "daily_cases_that_day": null,
+      "first_stretch_days": 0,
+      "total_days_at_or_over_capacity": 0,
+      "first_hospitals": []
+    },
+    {
+      "metric": "icu_citywide_aggregate",
+      "first_day_at_capacity": null,
+      "cum_cases_that_day": null,
+      "daily_cases_that_day": null,
+      "first_stretch_days": 0,
+      "total_days_at_or_over_capacity": 0,
+      "first_hospitals": []
+    }
+  ],
+  "top3_systems_by_catchment_cases": [
+    {
+      "facility_network": "NYC H+H",
+      "cum_cases": 191607.88861866418,
+      "n_zips": 45,
+      "catchment_pop": 2050618.0
+    },
+    {
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "cum_cases": 90537.71916997683,
+      "n_zips": 25,
+      "catchment_pop": 960482.0
+    },
+    {
+      "facility_network": "MOUNT SINAI HEALTH SYSTEM",
+      "cum_cases": 82177.3442259293,
+      "n_zips": 18,
+      "catchment_pop": 878954.0
+    }
+  ],
+  "top3_systems_by_routed_ward_admissions": [
+    {
+      "facility_network": "NYC H+H",
+      "routed_ward_admissions": 2667.4823714541294
+    },
+    {
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "routed_ward_admissions": 1260.427071028499
+    },
+    {
+      "facility_network": "MOUNT SINAI HEALTH SYSTEM",
+      "routed_ward_admissions": 1144.037537472409
+    }
+  ],
+  "vulnerable_zips": [
+    {
+      "zip_code": "11230",
+      "cum_cases": 9477.449097301333,
+      "population": 91391.0,
+      "facility_pfi": 1293,
+      "facility_name": "MAIMONIDES MIDWOOD COMMUNITY (1293)",
+      "facility_network": "MAIMONIDES HEALTH",
+      "free_acute_care_beds": 24.2,
+      "free_icu_beds": 1.2,
+      "system_label": "MAIMONIDES HEALTH",
+      "vulnerability_ratio": 391.6301279876584
+    },
+    {
+      "zip_code": "10456",
+      "cum_cases": 10349.537075930444,
+      "population": 93412.0,
+      "facility_pfi": 1164,
+      "facility_name": "BRONXCARE CENTER FULTON MANDY (1164)",
+      "facility_network": "INDEPENDENT",
+      "free_acute_care_beds": 28.9,
+      "free_icu_beds": 0.0,
+      "system_label": "BRONXCARE CENTER FULTON MANDY (1164)",
+      "vulnerability_ratio": 358.1154697553787
+    },
+    {
+      "zip_code": "11229",
+      "cum_cases": 7625.408816127723,
+      "population": 83669.0,
+      "facility_pfi": 1293,
+      "facility_name": "MAIMONIDES MIDWOOD COMMUNITY (1293)",
+      "facility_network": "MAIMONIDES HEALTH",
+      "free_acute_care_beds": 24.2,
+      "free_icu_beds": 1.2,
+      "system_label": "MAIMONIDES HEALTH",
+      "vulnerability_ratio": 315.0995378565175
+    },
+    {
+      "zip_code": "10002",
+      "cum_cases": 8967.470764918387,
+      "population": 82155.0,
+      "facility_pfi": 1437,
+      "facility_name": "NYP: LOWER MANHATTAN (1437)",
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "free_acute_care_beds": 29.7,
+      "free_icu_beds": 4.1,
+      "system_label": "NEW YORK - PRESBYTERIAN",
+      "vulnerability_ratio": 301.9350425898447
+    },
+    {
+      "zip_code": "11385",
+      "cum_cases": 9991.616782101122,
+      "population": 100883.0,
+      "facility_pfi": 1318,
+      "facility_name": "WYCKOFF HEIGHTS MC (1318)",
+      "facility_network": "INDEPENDENT",
+      "free_acute_care_beds": 33.9,
+      "free_icu_beds": 3.3,
+      "system_label": "WYCKOFF HEIGHTS MC (1318)",
+      "vulnerability_ratio": 294.73795817407444
+    },
+    {
+      "zip_code": "11355",
+      "cum_cases": 10242.145792932886,
+      "population": 89465.0,
+      "facility_pfi": 1628,
+      "facility_name": "FLUSHING HOSPITAL MEDICAL CENTER (1628)",
+      "facility_network": "MEDISYS HEALTH NETWORK",
+      "free_acute_care_beds": 37.2,
+      "free_icu_beds": 4.1,
+      "system_label": "MEDISYS HEALTH NETWORK",
+      "vulnerability_ratio": 275.3264998100238
+    },
+    {
+      "zip_code": "11226",
+      "cum_cases": 10998.629376081362,
+      "population": 101727.0,
+      "facility_pfi": 1320,
+      "facility_name": "UNIVERSITY: SUNY DOWNSTATE (1320)",
+      "facility_network": "SUNY DOWNSTATE",
+      "free_acute_care_beds": 45.0,
+      "free_icu_beds": 5.4,
+      "system_label": "SUNY DOWNSTATE",
+      "vulnerability_ratio": 244.41398613514139
+    },
+    {
+      "zip_code": "10468",
+      "cum_cases": 8509.6775590336,
+      "population": 78238.0,
+      "facility_pfi": 3975,
+      "facility_name": "NYP: ALLEN HOSPITAL (3975)",
+      "facility_network": "NEW YORK - PRESBYTERIAN",
+      "free_acute_care_beds": 36.0,
+      "free_icu_beds": 2.1,
+      "system_label": "NEW YORK - PRESBYTERIAN",
+      "vulnerability_ratio": 236.3799321953778
+    },
+    {
+      "zip_code": "11233",
+      "cum_cases": 7283.017613767514,
+      "population": 75399.0,
+      "facility_pfi": 1309,
+      "facility_name": "INTERFAITH MEDICAL CENTER (1309)",
+      "facility_network": "ONE BROOKLYN HEALTH",
+      "free_acute_care_beds": 32.5,
+      "free_icu_beds": 5.1,
+      "system_label": "ONE BROOKLYN HEALTH",
+      "vulnerability_ratio": 224.09284965438505
+    },
+    {
+      "zip_code": "11213",
+      "cum_cases": 6654.324280380624,
+      "population": 67217.0,
+      "facility_pfi": 1309,
+      "facility_name": "INTERFAITH MEDICAL CENTER (1309)",
+      "facility_network": "ONE BROOKLYN HEALTH",
+      "free_acute_care_beds": 32.5,
+      "free_icu_beds": 5.1,
+      "system_label": "ONE BROOKLYN HEALTH",
+      "vulnerability_ratio": 204.7484393963269
+    }
+  ]
+}
