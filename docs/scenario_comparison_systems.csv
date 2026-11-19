@@ -1,0 +1,7 @@
+table,rank,best_system,best_value,pandemic_flu_system,pandemic_flu_value,worst_system,worst_value
+by_catchment_cases,#1,NYC H+H,"191,608",NYC H+H,"595,241",NYC H+H,"1,341,939"
+by_catchment_cases,#2,NEW YORK - PRESBYTERIAN,"90,538",NEW YORK - PRESBYTERIAN,"281,261",NEW YORK - PRESBYTERIAN,"634,087"
+by_catchment_cases,#3,MOUNT SINAI HEALTH SYSTEM,"82,177",MOUNT SINAI HEALTH SYSTEM,"255,289",MOUNT SINAI HEALTH SYSTEM,"575,535"
+by_routed_ward_admissions,#1,NYC H+H,"2,667",NYC H+H,"14,825",NYC H+H,"9,233"
+by_routed_ward_admissions,#2,NEW YORK - PRESBYTERIAN,"1,260",NEW YORK - PRESBYTERIAN,"10,585",NEW YORK - PRESBYTERIAN,"6,784"
+by_routed_ward_admissions,#3,MOUNT SINAI HEALTH SYSTEM,"1,144",MOUNT SINAI HEALTH SYSTEM,"6,754",MOUNT SINAI HEALTH SYSTEM,"4,333"
